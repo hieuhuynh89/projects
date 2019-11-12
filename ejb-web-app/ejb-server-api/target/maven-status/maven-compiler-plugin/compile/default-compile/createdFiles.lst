@@ -1,0 +1,8 @@
+com\huynhchihieu\ejb\server\api\IRemoteQuiz.class
+com\huynhchihieu\ejb\server\api\IRemotePlayedQuizzesCounter.class
+com\huynhchihieu\ejb\server\api\ILocalQuiz.class
+com\huynhchihieu\ejb\server\api\ILocalPlayedQuizzesCounter.class
+com\huynhchihieu\ejb\server\api\ILocalQuizQuestionGenerator.class
+com\huynhchihieu\ejb\server\api\IQuiz.class
+com\huynhchihieu\ejb\server\api\IPlayedQuizzesCounter.class
+com\huynhchihieu\ejb\server\api\entities\LevelQuestion.class

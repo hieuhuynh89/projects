@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.huynhchihieu.ejb</groupId>
+		<artifactId>ejb-web-app</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>ejb-server-client-war</artifactId>
+	<packaging>war</packaging>
+	<name>ejb-server-client-war</name>
+	<description>ejb-server-client-war</description>
+	<dependencies>
+		<!-- Including the Session Beans implementation -->
+		<dependency>
+			<groupId>com.huynhchihieu.ejb</groupId>
+			<artifactId>ejb-server-impl</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.huynhchihieu.ejb</groupId>
+			<artifactId>jndi-lookup-util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<!-- Including again javaee-api dependency because the provided scope is 
+			not transitive -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>ejb-server-client-war</finalName>
+	</build>
+</project>
