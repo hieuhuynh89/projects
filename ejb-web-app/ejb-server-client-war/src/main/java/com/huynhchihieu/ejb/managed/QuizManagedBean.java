@@ -20,7 +20,7 @@ public class QuizManagedBean {
 	private int answer;
  
 	// I'm not DI'ing it!
-	@EJB
+	//@EJB
 	private ILocalQuiz quizProxy;
  
 	@EJB
@@ -31,31 +31,30 @@ public class QuizManagedBean {
 		System.out.println("Setting up after creating the JSF managed bean.");
 	}
 	
-	public String start() throws NamingException{
-		
+	public String start() throws NamingException {
+
 		playedQuizzesCounterProxy.increment();
- 
-		/*
-		 * if(quizProxy != null ){ quizProxy.end(); quizProxy = null;
-		 * System.out.println("Refreshing Quizz!"); }
-		 * 
-		 * //--- EJB Lookup in same WAR String moduleName = "ejb-server-client-war"; //
-		 * WAR name OR ejb-jar.xml module-name String beanName = "QuizBean"; String
-		 * interfaceQualifiedName = ILocalQuiz.class.getName();
-		 * 
-		 * // No password required <= Component deployed in the same container LookerUp
-		 * wildf9Lookerup = new LookerUp();
-		 * 
-		 * // We could instead the following method by giving the exact JNDI name : //
-		 * wildf9Lookerup.findSessionBean(
-		 * "java:global/ejb3-server-client-war/QuizBean!com.letsprog.learning.ejb3.server.api.ILocalQuiz")
-		 * quizProxy = (ILocalQuiz)
-		 * wildf9Lookerup.findLocalSessionBean(moduleName,beanName,
-		 * interfaceQualifiedName); // Good
-		 */
+
+		if (quizProxy != null) {
+			quizProxy.end();
+			quizProxy = null;
+			System.out.println("Refreshing Quizz!");
+		}
+
+		// --- EJB Lookup in same WAR
+		String moduleName = "ejb-server-client-war"; // WAR name OR ejb-jar.xml module-name
+		String beanName = "QuizBean";
+		String interfaceQualifiedName = ILocalQuiz.class.getName();
+
+		// No password required <= Component deployed in the same container
+		LookerUp wildf9Lookerup = new LookerUp();
+
+		// We could instead the following method by giving the exact JNDI name :
+		// wildf9Lookerup.findSessionBean("java:global/ejb3-server-client-war/QuizBean!com.letsprog.learning.ejb3.server.api.ILocalQuiz")
+		quizProxy = (ILocalQuiz) wildf9Lookerup.findLocalSessionBean(moduleName, beanName, interfaceQualifiedName); // Good
 		quizProxy.begin(playerName);
 		setQuestion(quizProxy.generateQuestionAndAnswer());
-		
+
 		return "quiz.xhtml";
 	}
  
