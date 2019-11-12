@@ -1,8 +1,0 @@
-D:\working\github-repository\projects\ejb-web-app\ejb-server-api\src\main\java\com\huynhchihieu\ejb\server\api\IQuiz.java
-D:\working\github-repository\projects\ejb-web-app\ejb-server-api\src\main\java\com\huynhchihieu\ejb\server\api\IPlayedQuizzesCounter.java
-D:\working\github-repository\projects\ejb-web-app\ejb-server-api\src\main\java\com\huynhchihieu\ejb\server\api\ILocalQuiz.java
-D:\working\github-repository\projects\ejb-web-app\ejb-server-api\src\main\java\com\huynhchihieu\ejb\server\api\ILocalPlayedQuizzesCounter.java
-D:\working\github-repository\projects\ejb-web-app\ejb-server-api\src\main\java\com\huynhchihieu\ejb\server\api\IRemotePlayedQuizzesCounter.java
-D:\working\github-repository\projects\ejb-web-app\ejb-server-api\src\main\java\com\huynhchihieu\ejb\server\api\ILocalQuizQuestionGenerator.java
-D:\working\github-repository\projects\ejb-web-app\ejb-server-api\src\main\java\com\huynhchihieu\ejb\server\api\entities\LevelQuestion.java
-D:\working\github-repository\projects\ejb-web-app\ejb-server-api\src\main\java\com\huynhchihieu\ejb\server\api\IRemoteQuiz.java
