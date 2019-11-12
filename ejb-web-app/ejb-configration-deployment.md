@@ -1,0 +1,13 @@
+1.  How to change the context-root of web-app in jboss server? 1.1
+    Create file jboss-web.xml follow as /webapp/WEB-INF/jboss-web.xml
+    1.2 Adding configuration as <?xml version="1.0" encoding="UTF-8"?>\
+     <jboss-web>\
+     <context-root>ejb-server-client-war</context-root>\
+     </jboss-web>
+2.  How to change the module's name in EJB? 2.1 Currently, I only know
+    one way to change the module name is to change the war file build's
+    name ( pom.xml ) <build> [...]
+    <finalName>ejb-server-client-war</finalName> </build> 2.2 Deploy
+    manually with Admin console (Default Admin console listening on
+    http://127.0.0.1:9990)
+
