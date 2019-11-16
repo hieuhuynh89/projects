@@ -1,20 +1,29 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.huynhchihieu.ejb</groupId>
-    <artifactId>ejb-web-app</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>jndi-lookup-util</artifactId>
-  <name>jndi-lookup-util</name>
-  <description>jndi-lookup-util</description>
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.huynhchihieu.ejb</groupId>
+		<artifactId>ejb-web-app</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>jndi-lookup-util</artifactId>
+	<name>jndi-lookup-util</name>
+	<description>jndi-lookup-util</description>
+	<dependencies>
 		<dependency>
 			<groupId>org.jboss</groupId>
 			<artifactId>jboss-remote-naming</artifactId>
 			<version>2.0.4.Final</version>
 		</dependency>
- 
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.jboss.xnio</groupId>
 			<artifactId>xnio-nio</artifactId>

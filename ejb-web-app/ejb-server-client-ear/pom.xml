@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.huynhchihieu.ejb</groupId>
+    <artifactId>ejb-web-app</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>ejb-server-client-ear</artifactId>
+  <packaging>ear</packaging>
+  <name>ejb-server-client-ear</name>
+  <description>ejb-server-client-ear</description>
+  
+  <dependencies>
+		<dependency>
+			<groupId>com.huynhchihieu.ejb</groupId>
+			<artifactId>ejb-server-client-war</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>com.huynhchihieu.ejb</groupId>
+			<artifactId>ejb-remote-client-war</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<generateApplicationXml>false</generateApplicationXml>
+					<applicationXml>${basedir}/src/main/application/META-INF/application.xml</applicationXml>
+					<version>7</version>
+					<defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+					<skinnyWars>true</skinnyWars>
+					
+					<modules>
+						<webModule>
+							<groupId>com.huynhchihieu.ejb</groupId>
+							<artifactId>ejb-server-client-war</artifactId>
+							<bundleFileName>ejb-server-client-war.war</bundleFileName>
+						</webModule>
+						<webModule>
+							<groupId>com.huynhchihieu.ejb</groupId>
+							<artifactId>ejb-remote-client-war</artifactId>
+							<bundleFileName>ejb-remote-client-war.war</bundleFileName>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

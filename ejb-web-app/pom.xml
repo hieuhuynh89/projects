@@ -78,5 +78,7 @@
   	<module>ejb-server-impl</module>
   	<module>jndi-lookup-util</module>
   	<module>ejb-server-client-war</module>
+  	<module>ejb-remote-client-war</module>
+  	<module>ejb-server-client-ear</module>
   </modules>
 </project>
