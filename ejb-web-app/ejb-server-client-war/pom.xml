@@ -35,6 +35,15 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>ejb-server-client-war</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.3</version>
+				<configuration>
+					<warName>ejb-server-client-war</warName>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>
