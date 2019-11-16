@@ -32,7 +32,7 @@
 				<version>3.0.2</version>
 				<configuration>
 					<generateApplicationXml>false</generateApplicationXml>
-					<applicationXml>${basedir}\src\main\application\META-INF\application.xml</applicationXml>
+					<applicationXml>${basedir}/src/main/application/META-INF/application.xml</applicationXml>
 					<version>7</version>
 					<defaultJavaBundleDir>lib/</defaultJavaBundleDir>
 					<skinnyWars>true</skinnyWars>
