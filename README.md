@@ -1,2 +1,2 @@
 # projects
-these projects here only for purpose noted, not actual introduce to everybody.
+this project is only for noted purpose, not actual introducing to everybody.
