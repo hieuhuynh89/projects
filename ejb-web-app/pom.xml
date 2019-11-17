@@ -80,5 +80,6 @@
   	<module>ejb-server-client-war</module>
   	<module>ejb-remote-client-war</module>
   	<module>ejb-server-client-ear</module>
+  	<module>EJBRemoteTester</module>
   </modules>
 </project>

@@ -9,6 +9,8 @@ import javax.faces.bean.SessionScoped;
 import javax.naming.NamingException;
 
 import com.huynhchihieu.ejb.jndi.lookup.LookerUp;
+import com.huynhchihieu.ejb.server.api.ILocalPlayedQuizzesCounter;
+import com.huynhchihieu.ejb.server.api.ILocalQuiz;
 import com.huynhchihieu.ejb.server.api.IRemotePlayedQuizzesCounter;
 import com.huynhchihieu.ejb.server.api.IRemoteQuiz;
 
@@ -21,9 +23,9 @@ public class QuizManagedBean {
 	private int answer;
 
 	// I'm not DI'ing it!
-	// @EJB
+	 @EJB
 	private IRemoteQuiz quizProxy;
-
+	
 	@EJB
 	private IRemotePlayedQuizzesCounter playedQuizzesCounterProxy;
 
@@ -56,7 +58,7 @@ public class QuizManagedBean {
 		LookerUp wildf9Lookerup = new LookerUp(ejbsServerAddress, ejbsServerPort);
 
 		// We could instead use the following method by giving the exact JNDI name :
-		// quizProxy = (IRemoteQuiz) wildf9Lookerup.findSessionBean("ejb:ejb-server-client-ear/ejb-server-client-war//QuizBean!com.huynhchihieu.ejb.server.api.IRemoteQuiz?stateful");
+		// quizProxy = (IRemoteQuiz) wildf9Lookerup.findSessionBean("ejb:ejb-server-client-ear/ejb-server-client-war/QuizBean!com.huynhchihieu.ejb.server.api.IRemoteQuiz?stateful");
 		quizProxy = (IRemoteQuiz) wildf9Lookerup.findRemoteSessionBean(SessionBeanType.STATEFUL, earName, moduleName,
 				deploymentDistinctName, beanName, interfaceQualifiedName);
 
