@@ -1,5 +1,7 @@
 package com.huynhchihieu.ejb.managed;
 
+import java.io.IOException;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
@@ -20,7 +22,7 @@ public class QuizManagedBean {
 	private int answer;
  
 	// I'm not DI'ing it!
-	@EJB
+//	@EJB
 	private ILocalQuiz quizProxy;
  
 	@EJB
@@ -31,7 +33,7 @@ public class QuizManagedBean {
 		System.out.println("Setting up after creating the JSF managed bean.");
 	}
 	
-	public String start() throws NamingException {
+	public String start() throws NamingException, IOException {
 
 		playedQuizzesCounterProxy.increment();
 
@@ -53,6 +55,16 @@ public class QuizManagedBean {
 		// wildf9Lookerup.findSessionBean("java:global/ejb3-server-client-war/QuizBean!com.huynhchihieu.ejb.server.api.ILocalQuiz")
 		quizProxy = (ILocalQuiz) wildf9Lookerup.findLocalSessionBean(moduleName, beanName, interfaceQualifiedName); // Good
 **/		
+		
+		LookerUp wildf9Lookerup = new LookerUp();
+		//quizProxy = (ILocalQuiz) wildf9Lookerup.findSessionBean("java:global/ejb-server-client-ear/ejb-server-client-war/QuizBean!com.huynhchihieu.ejb.server.api.ILocalQuiz");
+		
+		String appName = "ejb-server-client-ear";
+		String moduleName = "ejb-server-client-war";
+		String beanName = "QuizBean";
+		String interfaceFullQualifiedName = ILocalQuiz.class.getName();
+		
+		quizProxy = (ILocalQuiz) wildf9Lookerup.findLocalSessionBean(appName, moduleName, beanName, interfaceFullQualifiedName);
 		quizProxy.begin(playerName);
 		setQuestion(quizProxy.generateQuestionAndAnswer());
 
