@@ -1,8 +1,9 @@
 import java.io.IOException;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import com.huynhchihieu.ejb.jndi.lookup.LookerUp;
 import com.huynhchihieu.ejb.server.api.IRemotePlayedQuizzesCounter;
 
 /**
@@ -16,10 +17,9 @@ import com.huynhchihieu.ejb.server.api.IRemotePlayedQuizzesCounter;
  */
 public class EJBTester {
 	public static void main(String[] args) throws NamingException, IOException {
-		LookerUp wildf9Lookerup = new LookerUp();
-		IRemotePlayedQuizzesCounter playedQuizzesCounterProxy = (IRemotePlayedQuizzesCounter) wildf9Lookerup
-				.findSessionBean(
-						"/ejb-server-client-ear/ejb-server-client-war/PlayedQuizzesCounterBean!com.huynhchihieu.ejb.server.api.IRemotePlayedQuizzesCounter");
+        final Context context = new InitialContext();
+		IRemotePlayedQuizzesCounter playedQuizzesCounterProxy = (IRemotePlayedQuizzesCounter) context.lookup(
+						"ejb:ejb-server-client-ear/ejb-server-client-war/PlayedQuizzesCounterBean!com.huynhchihieu.ejb.server.api.IRemotePlayedQuizzesCounter");
 		System.out.println("The number of played quizzes is : " + playedQuizzesCounterProxy.getNumber());
 	}
 }
