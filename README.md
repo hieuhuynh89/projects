@@ -8,7 +8,7 @@ You can clone this project by mannualy download or using git tools client.
 After clone the project you can see the structure as
 
 --\ejb-web-app<br/>
-     --\ejb-remote-client-war<br/>
-     --\EJBRemoteTester<br/>
-     --\ejb-server-api<br/>
-     -- ..
+&nbsp;&nbsp;--\ejb-remote-client-war<br/>
+&nbsp;&nbsp;--\EJBRemoteTester<br/>
+&nbsp;&nbsp;--\ejb-server-api<br/>
+&nbsp;&nbsp;-- ..
