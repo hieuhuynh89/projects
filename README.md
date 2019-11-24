@@ -7,3 +7,8 @@ You can clone this project by mannualy download or using git tools client.
 ## 2. How to compile these of components based on Maven
 After clone the project you can see the structure as
 
+--\ejb-web-app
+     --\ejb-remote-client-war
+     --\EJBRemoteTester
+     --\ejb-server-api
+     -- ..
