@@ -42,11 +42,13 @@
 							<groupId>com.huynhchihieu.ejb</groupId>
 							<artifactId>ejb-server-client-war</artifactId>
 							<bundleFileName>ejb-server-client-war.war</bundleFileName>
+<!-- 							<contextRoot>/ejb-server-client-war</contextRoot> -->
 						</webModule>
 						<webModule>
 							<groupId>com.huynhchihieu.ejb</groupId>
 							<artifactId>ejb-remote-client-war</artifactId>
 							<bundleFileName>ejb-remote-client-war.war</bundleFileName>
+<!-- 							<contextRoot>/ejb-remote-client-war</contextRoot> -->
 						</webModule>
 					</modules>
 				</configuration>
